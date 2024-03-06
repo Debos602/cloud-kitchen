@@ -1,0 +1,74 @@
+[
+	{
+		"service_id": "1",
+		"img": "https://i.ibb.co/P9wsnMP/service-2.png",
+		"name": "Meat Ball",
+		"price": "$10.99",
+		"description": "Meat Balls are savory spheres of ground meat, typically beef or pork, seasoned with herbs and spices. These juicy and flavorful balls are a classic comfort food enjoyed worldwide. Whether served in a tangy tomato sauce, on top of spaghetti, or as part of a hearty sandwich, Meat Balls never fail to satisfy cravings. Their versatility makes them perfect for family dinners, potlucks, or as appetizers at gatherings. Treat yourself to the mouthwatering goodness of Meat Balls and indulge in a timeless culinary delight.",
+		"ratings": 4.5
+	},
+	{
+		"service_id": "2",
+		"img": "https://i.ibb.co/6WmbgHh/service-1.png",
+		"name": "Chicken Role",
+		"price": "$8.49",
+		"description": "Chicken Rolls are delicious wraps filled with tender chicken, crisp vegetables, and flavorful sauces. These handheld delights offer a burst of savory goodness in every bite, making them a favorite among food enthusiasts of all ages. Whether enjoyed as a quick lunch, a snack on the go, or part of a picnic spread, Chicken Rolls are sure to satisfy your cravings and leave you wanting more. Treat yourself to the deliciousness of Chicken Rolls and elevate your dining experience with every savory bite.",
+		"ratings": 4.7
+	},
+	{
+		"service_id": "3",
+		"img": "https://i.ibb.co/dgV2grN/service-3.png",
+		"name": "Egg Salad",
+		"price": "$12.79",
+		"description": "Egg Salad is a delightful dish featuring fresh eggs, mixed greens, crunchy vegetables, and a tangy dressing. This classic salad offers a perfect balance of protein, vitamins, and flavors, making it a healthy and satisfying choice for any meal. With its vibrant colors and refreshing taste, Egg Salad is a favorite among health-conscious individuals and food enthusiasts alike. Whether enjoyed as a light lunch, a side dish, or a picnic staple, this versatile salad never fails to impress. Treat yourself to the goodness of Egg Salad and indulge in its wholesome goodness today!",
+		"ratings": 4.8
+	},
+	{
+		"service_id": "4",
+		"img": "https://i.ibb.co/4pvF7ft/service-5.png",
+		"name": "Fried Chicken Bites",
+		"price": "$15.99",
+		"description": "Fried Chicken Bites are crispy, juicy morsels of chicken perfection that are sure to tantalize your taste buds. Made from succulent chicken pieces coated in a seasoned breading and deep-fried to golden perfection, these bite-sized delights are a crowd-pleaser for any occasion. Whether enjoyed as a snack, appetizer, or main course, Fried Chicken Bites are sure to satisfy even the most discerning of palates. Pair them with your favorite dipping sauce and enjoy a flavor-packed culinary experience that will leave you craving more. Treat yourself to the irresistible taste of Fried Chicken Bites today!",
+		"ratings": 4.6
+	},
+	{
+		"service_id": "5",
+		"img": "https://i.ibb.co/WBW6zXP/service-6.png",
+		"name": "Rummen Noddles",
+		"price": "$9.99",
+		"description": "Rummen Noodles are a comforting and flavorful dish made with tender noodles tossed in a savory sauce. With a perfect balance of spices and seasonings, these noodles are a favorite among noodle enthusiasts. Whether enjoyed as a quick lunch, a satisfying dinner, or a late-night snack, Rummen Noodles are sure to hit the spot. Add your favorite vegetables, proteins, or sauces to customize your meal and make it truly your own. Treat yourself to the deliciousness of Rummen Noodles and experience comfort in every bite.",
+		"ratings": 4.4
+	},
+	{
+		"service_id": "6",
+		"img": "https://i.ibb.co/kD0kgPh/service-7.png",
+		"name": "Fried Rice",
+		"price": "$11.29",
+		"description": "Fried Rice is a delicious and satisfying dish that is perfect for any meal. Made with fluffy white rice, assorted vegetables, eggs, and savory seasonings, this dish is bursting with flavor and texture. Each bite is a harmonious blend of sweet, salty, and umami flavors, making it a favorite among food lovers everywhere. Whether enjoyed on its own as a quick and easy meal or paired with your favorite protein for a more substantial dish, Fried Rice is sure to please even the most discerning of palates. Treat yourself to the deliciousness of Fried Rice today!",
+		"ratings": 4.9
+	},
+	{
+		"service_id": "7",
+		"img": "https://i.ibb.co/qdjsXXG/service-9.png",
+		"name": "Chicken Bites",
+		"price": "$14.49",
+		"description": "Chicken Bites are bite-sized pieces of succulent chicken that are perfect for snacking or as part of a meal. These tender and flavorful bites are coated in a seasoned breading and fried to crispy perfection, making them irresistible to anyone who tries them. Whether enjoyed on their own with your favorite dipping sauce or served alongside other dishes, Chicken Bites are sure to be a hit at any gathering. Treat yourself to the deliciousness of Chicken Bites and satisfy your cravings for savory goodness.",
+		"ratings": 4.7
+	},
+	{
+		"service_id": "8",
+		"img": "https://i.ibb.co/m8rVy19/service-10.png",
+		"name": "Vanilla Cake",
+		"price": "$7.99",
+		"description": "Vanilla Cake is a classic dessert loved by people of all ages. Made with simple ingredients like flour, sugar, eggs, and vanilla extract, this cake is soft, moist, and bursting with flavor. Each bite is a heavenly indulgence, with the sweet aroma of vanilla filling your senses and leaving you craving more. Whether enjoyed on its own or dressed up with frosting and decorations for a special occasion, Vanilla Cake is sure to satisfy your sweet tooth and leave you with a smile on your face. Treat yourself to the timeless delight of Vanilla Cake today!",
+		"ratings": 4.6
+	},
+	{
+		"service_id": "9",
+		"img": "https://i.ibb.co/Pt74FRc/service-11.png",
+		"name": "Bread Slice",
+		"price": "$13.49",
+		"description": "Bread slice is a simple yet satisfying staple that is perfect for any meal or occasion. Made from freshly baked bread, each slice is soft, fluffy, and bursting with flavor. Whether enjoyed on its own with a pat of butter or used as a base for sandwiches and toast, bread slice is a versatile addition to any kitchen. With its comforting aroma and wholesome taste, it's no wonder that bread slice is a beloved favorite among people of all ages. Treat yourself to the simple pleasure of bread slice and savor its deliciousness with every bite!",
+		"ratings": 4.8
+	}
+]

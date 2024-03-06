@@ -1,0 +1,10 @@
+.header-list li:hover a {
+	border-bottom: 3px solid orange;
+	transition: 0.3s;
+}
+@media only screen and (max-width: 1024px) {
+	.header-list li:hover a {
+		border-bottom: 0px solid orange;
+		transition: 0.3s;
+	}
+}
