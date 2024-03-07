@@ -8,6 +8,7 @@ import {
 	signOut,
 	signInWithPopup,
 	sendPasswordResetEmail,
+	updateProfile,
 } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { FacebookAuthProvider } from "firebase/auth";
@@ -15,6 +16,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
+// console.log(auth);
 const facebookProvider = new FacebookAuthProvider();
 const googleProvider = new GoogleAuthProvider();
 
@@ -28,6 +30,10 @@ const AuthProvider = ({ children }) => {
 	};
 	const emailLogin = (email, password) => {
 		return signInWithEmailAndPassword(auth, email, password);
+	};
+
+	const updateUserName = (profile) => {
+		return updateProfile(auth.currentUser, profile);
 	};
 
 	const logOut = () => {
@@ -50,7 +56,7 @@ const AuthProvider = ({ children }) => {
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-			console.log("current user", currentUser);
+			// console.log("current user", currentUser);
 			setUser(currentUser);
 		});
 		return () => {
@@ -66,6 +72,7 @@ const AuthProvider = ({ children }) => {
 		facebookLogin,
 		googleLogin,
 		forgetPassword,
+		updateUserName,
 	};
 	return (
 		<AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

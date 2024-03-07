@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const ServiceItem = ({ service }) => {
 	const { _id, img, name, price, description, ratings } = service;
+	console.log(name);
 	return (
 		<div className="card glass shadow-lg hover:shadow-orange-500/100 duration-500">
 			<PhotoProvider>
@@ -27,7 +28,7 @@ const ServiceItem = ({ service }) => {
 				</p>
 
 				<div className="card-actions justify-center">
-					<Link to={`/review/${_id}`}>
+					<Link to={`/services/${_id}`}>
 						<button className="btn text-2xl rounded-full px-10 bg-orange-300 mt-5 hover:text-white hover:bg-black duration-300">
 							Details
 						</button>

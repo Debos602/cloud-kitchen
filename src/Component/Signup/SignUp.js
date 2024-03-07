@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const SignUp = () => {
-	const { createUser, logOut } = useContext(AuthContext);
+	const { createUser, logOut, updateUserName } = useContext(AuthContext);
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -13,9 +13,11 @@ const SignUp = () => {
 
 		try {
 			const user = await createUser(email, password, name);
-			alert("User creates successfully");
+			await handleUserName(name); // Update user's name
+			alert("User created successfully");
 			setEmail("");
 			setPassword("");
+			setName(""); // Clear the name input
 			event.target.reset();
 			handleLogout();
 		} catch (error) {
@@ -25,6 +27,15 @@ const SignUp = () => {
 
 	const handleLogout = () => {
 		logOut()
+			.then(() => {})
+			.catch((error) => console.log(error));
+	};
+
+	const handleUserName = (name) => {
+		const profile = {
+			displayName: name,
+		};
+		updateUserName(profile)
 			.then(() => {})
 			.catch((error) => console.log(error));
 	};
