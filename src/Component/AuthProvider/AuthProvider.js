@@ -26,31 +26,38 @@ const AuthProvider = ({ children }) => {
 
 	// email and password authentication
 	const createUser = (email, password) => {
+		setLoading(true);
 		return createUserWithEmailAndPassword(auth, email, password);
 	};
 	const emailLogin = (email, password) => {
+		setLoading(true);
 		return signInWithEmailAndPassword(auth, email, password);
 	};
 
 	const updateUserName = (profile) => {
+		setLoading(true);
 		return updateProfile(auth.currentUser, profile);
 	};
 
 	const logOut = () => {
+		setLoading(true);
 		return signOut(auth);
 	};
 
 	// Social site Authentication
 
 	const facebookLogin = () => {
+		setLoading(true);
 		return signInWithPopup(auth, facebookProvider);
 	};
 
 	const googleLogin = () => {
+		setLoading(true);
 		return signInWithPopup(auth, googleProvider);
 	};
 
 	const forgetPassword = (email) => {
+		setLoading(true);
 		return sendPasswordResetEmail(auth, email);
 	};
 
@@ -58,6 +65,7 @@ const AuthProvider = ({ children }) => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
 			// console.log("current user", currentUser);
 			setUser(currentUser);
+			setLoading(false);
 		});
 		return () => {
 			return unsubscribe;
@@ -66,6 +74,7 @@ const AuthProvider = ({ children }) => {
 
 	const authInfo = {
 		user,
+		loading,
 		createUser,
 		emailLogin,
 		logOut,

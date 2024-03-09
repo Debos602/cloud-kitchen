@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 
 const ServiceItem = ({ service }) => {
 	const { _id, img, name, price, description, ratings } = service;
-	console.log(name);
+	// console.log(name);
 	return (
 		<div className="card glass shadow-lg hover:shadow-orange-500/100 duration-500">
 			<PhotoProvider>
 				<PhotoView src={img}>
 					<figure>
-						<img src={img} className="object-cover w-2/3 pt-4" alt="car!" />
+						<img src={img} className="object-cover w-2/4 pt-4" alt="car!" />
 					</figure>
 				</PhotoView>
 			</PhotoProvider>
@@ -24,7 +24,7 @@ const ServiceItem = ({ service }) => {
 					<span className="text-xl font-semibold">Ratings: {ratings}</span>
 				</div>
 				<p className="text-xl border-2 p-2 rounded-xl">
-					{description.split(" ").slice(0, 50).join(" ")}
+					{description.split(" ").slice(0, 20).join(" ")}
 				</p>
 
 				<div className="card-actions justify-center">

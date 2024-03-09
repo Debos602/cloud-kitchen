@@ -59,17 +59,22 @@ const Header = () => {
 								Home
 							</Link>
 						</li>
-						<li className="max-lg:py-2 max-lg:border-b-2 max-lg:border-text-black hover:text-orange-300">
-							<Link className="px-4" to="/addservice">
-								Add Service
-							</Link>
-						</li>
+						{user?.uid ? (
+							<li className="max-lg:py-2 max-lg:border-b-2 max-lg:border-text-black hover:text-orange-300">
+								<Link className="px-4" to="/addservice">
+									Add Service
+								</Link>
+							</li>
+						) : (
+							""
+						)}
 
 						<li className="max-lg:py-2 max-lg:border-b-2 max-lg:border-text-black hover:text-orange-300">
 							<Link className="px-4" to="/myreview">
 								My Review
 							</Link>
 						</li>
+
 						<li className="max-lg:py-2 max-lg:border-b-2 max-lg:border-text-black hover:text-orange-300">
 							<Link className="px-4" to="/Contact">
 								Contact
@@ -101,7 +106,7 @@ const Header = () => {
 					</div>
 
 					<button className="px-10 py-5 max-lg:hidden bg-orange-300 hover:text-orange-300 hover:bg-black duration-500 text-xl font-bold uppercase rounded-full">
-						Blog
+						<Link to="/blog">Blog</Link>
 					</button>
 				</div>
 			</div>

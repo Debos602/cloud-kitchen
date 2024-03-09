@@ -8,7 +8,9 @@ const Services = () => {
 	useEffect(() => {
 		fetch("http://localhost:5000/services")
 			.then((res) => res.json())
-			.then((data) => {setServices(data)});
+			.then((data) => {
+				setServices(data);
+			});
 	}, []);
 
 	const serviceBackground = {
@@ -19,7 +21,7 @@ const Services = () => {
 		height: "100%",
 	};
 	return (
-		<div className="relative z-10 py-60" style={serviceBackground}>
+		<div className="relative z-10 py-36" style={serviceBackground}>
 			<div className="absolute top-0 left-0 h-full w-full bg-black opacity-50 -z-10"></div>
 			<div className="container px-20 text-center mx-auto py-20 text-white">
 				<div className="grid grid-cols-3 max-lg:grid-cols-1 gap-10">
