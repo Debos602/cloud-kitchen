@@ -7,9 +7,12 @@ const SignUp = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [isSigningUp, setIsSigningUp] = useState(false); // State for showing spinner
 
 	const handleEmailRegister = async (event) => {
 		event.preventDefault();
+
+		setIsSigningUp(true); // Start showing spinner
 
 		try {
 			const user = await createUser(email, password, name);
@@ -22,6 +25,8 @@ const SignUp = () => {
 			handleLogout();
 		} catch (error) {
 			console.error("Error registering:", error.message);
+		} finally {
+			setIsSigningUp(false); // Stop showing spinner
 		}
 	};
 
@@ -40,7 +45,13 @@ const SignUp = () => {
 			.catch((error) => console.log(error));
 	};
 
-	return (
+	return isSigningUp ? (
+		<div className="text-center mt-4 min-h-screen flex items-center justify-center">
+			<div className="spinner-border text-orange-400 pt-60" role="status">
+				<span className="loading loading-spinner loading-lg"></span>
+			</div>
+		</div>
+	) : (
 		<div className="bg-gradient-to-b from-orange-200">
 			<div className="container mx-auto px-50 py-60 w-full">
 				<div className="max-lg:w-4/6 md:w-3/6 xl:w-2/6 mx-auto bg-orange-100 shadow-lg rounded-lg shadow-orange-500/50 p-20">
@@ -95,11 +106,7 @@ const SignUp = () => {
 								fill="currentColor"
 								className="w-4 h-4 opacity-70"
 							>
-								<path
-									// fillRule="evenodd"
-									d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-									// clipRule="evenodd"
-								/>
+								<path d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" />
 							</svg>
 							<input
 								type="password"
@@ -110,6 +117,7 @@ const SignUp = () => {
 								onChange={(e) => setPassword(e.target.value)}
 							/>
 						</label>
+
 						<button
 							type="submit"
 							className="px-16  mt-8 inline-block py-4 hover:text-orange-300 hover:bg-black duration-500 bg-orange-300 text-xl font-bold uppercase rounded-full"

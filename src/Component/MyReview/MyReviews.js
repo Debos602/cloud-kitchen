@@ -46,6 +46,8 @@ const MyReviews = () => {
 							review={review}
 							index={index}
 							handleDelete={handleDelete}
+							reviews={reviews}
+							setReviews={setReviews}
 						/>
 					))
 				)}

@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
 import serviceImg from "../../assets/serviceBG.jpg";
 import ServiceItem from "../ServiceItem/ServiceItem";
+import { useLoaderData } from "react-router-dom";
 
 const Services = () => {
-	const [services, setServices] = useState([]);
+	const { services, count } = useLoaderData();
 
-	useEffect(() => {
-		fetch("http://localhost:5000/services")
-			.then((res) => res.json())
-			.then((data) => {
-				setServices(data);
-			});
-	}, []);
+	const perPage = 3;
 
 	const serviceBackground = {
 		backgroundImage: `url(${serviceImg})`,

@@ -9,6 +9,8 @@ const Login = () => {
 		useContext(AuthContext);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [isLoading, setIsLoading] = useState(false);
+	console.log(true);
 	const navigate = useNavigate();
 	const location = useLocation();
 	let from = location.state?.from?.pathname || "/";
@@ -21,23 +23,37 @@ const Login = () => {
 
 	const handleFacebookLogin = async (event) => {
 		event.preventDefault();
-		try {
-			await facebookLogin();
-		} catch (error) {
-			console.error("Error logging in with Facebook:", error.message);
-		}
+		setIsLoading(true);
+		setTimeout(async () => {
+			try {
+				await facebookLogin();
+			} catch (error) {
+				console.error("Error logging in with Facebook:", error.message);
+			} finally {
+				setIsLoading(false);
+			}
+		}, 1000); // <- Set the delay time here
 	};
+
 	const handleGoogleProvider = async (event) => {
 		event.preventDefault();
-		try {
-			await googleLogin();
-		} catch (error) {
-			console.error("Error logging in with Facebook:", error.message);
-		}
+		setIsLoading(true);
+		setTimeout(async () => {
+			try {
+				await googleLogin();
+				navigate(from, { replace: true });
+			} catch (error) {
+				console.error("Error logging in with Google:", error.message);
+			} finally {
+				setIsLoading(false);
+			}
+		}, 1000); // <- Set the delay time here
 	};
 
 	const handleLoginFormSubmit = async (event) => {
 		event.preventDefault();
+		setIsLoading(true);
+
 		try {
 			await emailLogin(email, password);
 			alert("Log In successful");
@@ -46,19 +62,29 @@ const Login = () => {
 			navigate(from, { replace: true });
 		} catch (error) {
 			console.error("Error logging in:", error.message);
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
 	const handleForgetPassword = (event) => {
 		event.preventDefault();
+		setIsLoading(true);
 		forgetPassword(email)
 			.then(() => {
-				alert("password reset email sent");
+				alert("Password reset email sent");
 			})
-			.catch((error) => alert("Input a valid email"));
+			.catch((error) => alert("Input a valid email"))
+			.finally(() => setIsLoading(false));
 	};
 
-	return (
+	return isLoading ? (
+		<div className="text-center mt-4 min-h-screen flex items-center justify-center">
+			<div className="spinner-border text-orange-400 pt-60" role="status">
+				<span className="loading loading-spinner loading-lg"></span>
+			</div>
+		</div>
+	) : (
 		<div className="bg-gradient-to-b from-orange-200">
 			<div className="container mx-auto max-lg:px-50 py-60 w-full">
 				<div className="max-lg:w-4/6 md:w-3/6 xl:w-2/6 mx-auto rounded-lg bg-orange-100 shadow-lg shadow-orange-500/50 p-20">
