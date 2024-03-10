@@ -7,7 +7,7 @@ const ServiceItem = ({ service }) => {
 	const { _id, img, name, price, description, ratings } = service;
 	// console.log(name);
 	return (
-		<div className="card glass shadow-lg hover:shadow-orange-500/100 duration-500">
+		<div className="card glass mb-0 shadow-lg hover:shadow-orange-200/100 duration-500">
 			<PhotoProvider>
 				<PhotoView src={img}>
 					<figure>
@@ -20,10 +20,10 @@ const ServiceItem = ({ service }) => {
 					<span className="text-center w-full">{name}</span>
 				</h2>
 				<div className="flex justify-between items-center">
-					<span className="text-xl  font-semibold">Price: {price}</span>
-					<span className="text-xl font-semibold">Ratings: {ratings}</span>
+					<span className="  font-normal">Price: {price}</span>
+					<span className=" font-normal">Ratings: {ratings}</span>
 				</div>
-				<p className="text-xl border-2 p-2 rounded-xl">
+				<p className="text-base font-medium text-left bg-glass p-2 border-2 rounded-xl">
 					{description.split(" ").slice(0, 20).join(" ")}
 				</p>
 

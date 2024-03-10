@@ -40,7 +40,7 @@ const Header = () => {
 	return (
 		<div
 			id="header"
-			className="absolute top-[0px] bg-white w-full z-20 border-b hover:text-orange-300-2 border-slate-400"
+			className="fixed top-[0px] bg-white w-full z-20 border-b hover:text-orange-300-2 border-slate-400"
 		>
 			<HeaderTop></HeaderTop>
 			<div className="lg:container mx-auto lg:px-20 py-2 ">

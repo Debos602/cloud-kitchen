@@ -27,7 +27,7 @@ const Service = () => {
 	return (
 		<div className="relative z-10" style={serviceBackground}>
 			<div className="absolute top-0 left-0 h-full w-full bg-black opacity-50 -z-10"></div>
-			<div className="container px-20 text-center mx-auto py-20 text-white">
+			<div className="container p-20  text-center mx-auto text-white">
 				<h2 className="text-center text-5xl uppercase font-bold mb-5">
 					Our <span className="text-orange-300">Service</span> Area
 				</h2>
