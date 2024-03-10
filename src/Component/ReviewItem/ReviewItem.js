@@ -6,7 +6,6 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const ReviewItem = ({ reviews, setReviews, review, index, handleDelete }) => {
-	console.log(reviews);
 	const { user } = useContext(AuthContext);
 	const [showModal, setShowModal] = useState(false);
 	const [editMessage, setEditMessage] = useState(review?.message);

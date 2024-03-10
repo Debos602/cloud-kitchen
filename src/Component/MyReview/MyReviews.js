@@ -3,14 +3,26 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import ReviewItem from "../ReviewItem/ReviewItem";
 
 const MyReviews = () => {
-	const { user } = useContext(AuthContext);
+	const { user, logOut } = useContext(AuthContext);
 	const [reviews, setReviews] = useState([]);
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-			.then((res) => res.json())
-			.then((data) => setReviews(data));
-	}, [user?.email]);
+		fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+			headers: {
+				authorization: `Bearer ${localStorage.getItem("cloud-kitchen")}`,
+			},
+		})
+			.then((res) => {
+				if (res.status === 401 || res.status === 403) {
+					logOut();
+				}
+				return res.json();
+			})
+			.then((data) => {
+				// console.log("recieved", data);
+				setReviews(data);
+			});
+	}, [user?.email, logOut]);
 
 	const handleDelete = (id) => {
 		const proceed = window.confirm(
