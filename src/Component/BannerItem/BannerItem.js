@@ -32,7 +32,7 @@ const BannerItem = ({ banner }) => {
 						Make Reservation
 					</Link>
 				</div>
-				<div className="absolute flex justify-center left-5 right-5 bottom-0 transform -translate-y-1/2">
+				<div className="absolute flex justify-center left-5 right-5 bottom-5 transform -translate-y-1/2">
 					<a href={`#slide${pre}`} className="btn btn-circle mr-5">
 						❮
 					</a>
