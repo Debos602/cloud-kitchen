@@ -1,28 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AddService = () => {
+	const [imageFile, setImageFile] = useState(null);
+
+	const handleFileChange = (event) => {
+		setImageFile(event.target.files[0]);
+	};
+
 	const handleFormData = (event) => {
 		event.preventDefault();
 		const form = event.target;
 		const name = form.name.value;
-		const image = form.image.value;
+		const image =
+			form.image && form.image.files[0] ? form.image.files[0].name : ""; // Check if image file exists
 		const ratings = form.ratings.value;
 		const price = form.price.value;
 		const message = form.message.value;
-		console.log({ name, image, ratings, price, message });
 
 		const formData = {
 			name: name,
 			price: price,
 			img: image,
 			description: message,
-			ratings: 4.8,
+			ratings: ratings,
 		};
 
 		fetch("http://localhost:5000/addservice", {
 			method: "POST",
-			headers: { "content-type": "application/json" },
-			body: JSON.stringify(formData),
+			body: formData,
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -53,11 +58,12 @@ const AddService = () => {
 								/>
 							</label>
 							<label className="text-xl font-bold my-2 block">
-								Image URL
+								Image Upload
 								<input
-									type="text"
+									type="file"
+									accept="image/*"
 									name="image"
-									placeholder="Image url"
+									onChange={handleFileChange}
 									className="border-2 rounded-xl border-gray-300 p-4 w-full"
 								/>
 							</label>
