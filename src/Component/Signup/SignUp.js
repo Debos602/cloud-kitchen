@@ -53,9 +53,9 @@ const SignUp = () => {
 		</div>
 	) : (
 		<div className="bg-gradient-to-b from-orange-200">
-			<div className="container mx-auto px-50 py-60 w-full">
-				<div className="max-lg:w-4/6 md:w-3/6 xl:w-2/6 mx-auto bg-orange-100 shadow-lg rounded-lg shadow-orange-500/50 p-20">
-					<h2 className="text-4xl font-extrabold text-center opacity-95 mb-6">
+			<div className="container mx-auto px-50  pt-56 pb-16  w-full">
+				<div className="max-lg:w-4/6 md:w-3/6 xl:w-2/6 mx-auto bg-orange-100 shadow-lg rounded-lg shadow-orange-500/50 py-10 px-16">
+					<h2 className="text-4xl font-extrabold uppercase text-center opacity-95 mb-6">
 						Register Here Now!
 					</h2>
 					<form onSubmit={handleEmailRegister} className="text-center">

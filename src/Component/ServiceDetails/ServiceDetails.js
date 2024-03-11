@@ -10,7 +10,7 @@ import useNav from "../../Hooks/useNav";
 const ServiceDetails = () => {
 	const { user } = useContext(AuthContext);
 	const { _id, description, img, name, price, ratings } = useLoaderData();
-	useNav("Service");
+	useNav("Review");
 
 	// console.log(description);
 	const backgroundImageStyle = {
@@ -24,7 +24,7 @@ const ServiceDetails = () => {
 		<>
 			<div className="relative z-10" style={backgroundImageStyle}>
 				<div className="absolute inset-0 bg-black opacity-50 -z-10 mix-blend-multiply"></div>
-				<div className="container px-20 mx-auto py-60">
+				<div className="container px-20 mx-auto pt-56 pb-16">
 					<div className="flex flex-col justify-center items-center pt-20 text-white">
 						<h2 className="tracking-widest text-white text-5xl font-bold">
 							Food Review

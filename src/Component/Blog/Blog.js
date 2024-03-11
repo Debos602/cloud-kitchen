@@ -2,10 +2,10 @@ import React from "react";
 import useNav from "../../Hooks/useNav";
 
 const Blog = () => {
-	useNav("Blog")
+	useNav("Blog");
 	return (
 		<div className="min-h-screen bg-gradient-to-t from-orange-200 flex justify-center items-center">
-			<div className=" w-full max-lg:w-full md:w-3/4 px-20 py-48 font-bold grid grid-cols-1 md:grid-cols-2 gap-5">
+			<div className=" w-full max-lg:w-full md:w-3/4 px-20 pt-56 pb-16 font-bold grid grid-cols-1 md:grid-cols-2 gap-5">
 				<div className="border-2 border-orange-300 p-10 rounded-xl">
 					<p className="text-xl pb-2"> 1. Difference between SQL and NoSQL?</p>
 					<p className="font-normal">
