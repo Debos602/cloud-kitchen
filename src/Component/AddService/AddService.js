@@ -1,42 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
+import useNav from "../../Hooks/useNav";
 
 const AddService = () => {
-	const [imageFile, setImageFile] = useState(null);
-
-	const handleFileChange = (event) => {
-		setImageFile(event.target.files[0]);
-	};
-
+	useNav("Add_Service");
 	const handleFormData = (event) => {
 		event.preventDefault();
-		const form = event.target;
-		const name = form.name.value;
-		const image =
-			form.image && form.image.files[0] ? form.image.files[0].name : ""; // Check if image file exists
-		const ratings = form.ratings.value;
-		const price = form.price.value;
-		const message = form.message.value;
 
-		const formData = {
-			name: name,
-			price: price,
-			img: image,
-			description: message,
-			ratings: ratings,
-		};
+		const form = new FormData(event.target);
+		const name = form.get("name");
+		const img = form.get("image");
+		const ratings = form.get("ratings");
+		const price = form.get("price");
+		const description = form.get("message");
 
-		fetch("http://localhost:5000/addservice", {
-			method: "POST",
-			body: formData,
-		})
+		const data = new FormData();
+		data.append("image", img);
+
+		fetch(
+			"https://api.imgbb.com/1/upload?key=09bd3d3e0869a6943ef1ad6d74606666",
+			{
+				method: "POST",
+				body: data,
+			}
+		)
 			.then((res) => res.json())
 			.then((data) => {
-				if (data.acknowledged) {
-					alert("data added successfully");
-				}
 				console.log(data);
-			})
-			.catch((error) => console.log(error));
+				const userData = {
+					name,
+					img: data.data.display_url,
+					ratings,
+					price,
+					description,
+				};
+				fetch("http://localhost:5000/addservice", {
+					method: "POST",
+					headers: { "content-type": "application/json" },
+					body: JSON.stringify(userData),
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						if (data.acknowledged) {
+							alert("data added successfully");
+						}
+						console.log(data);
+					})
+					.catch((error) => console.log(error));
+			});
 	};
 
 	return (
@@ -58,12 +68,11 @@ const AddService = () => {
 								/>
 							</label>
 							<label className="text-xl font-bold my-2 block">
-								Image Upload
+								Image URL
 								<input
 									type="file"
-									accept="image/*"
 									name="image"
-									onChange={handleFileChange}
+									placeholder="Image url"
 									className="border-2 rounded-xl border-gray-300 p-4 w-full"
 								/>
 							</label>

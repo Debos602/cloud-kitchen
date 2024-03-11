@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import serviceImg from "../../assets/serviceBG.jpg";
 import ServiceItem from "../ServiceItem/ServiceItem";
+import useNav from "../../Hooks/useNav";
 
 const Services = () => {
+	useNav("Services");
 	const [services, setServices] = useState([]);
 	const [count, setCount] = useState(0);
 	const [page, setPage] = useState(0);

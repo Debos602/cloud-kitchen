@@ -55,8 +55,12 @@ const router = createBrowserRouter([
 				element: <Blog></Blog>,
 			},
 			{
+				path: "/shop",
+				element: <Shop></Shop>,
+			},
+			{
 				path: "/services",
-				
+
 				element: <Services></Services>,
 			},
 			{

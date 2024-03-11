@@ -1,6 +1,8 @@
 import React from "react";
+import useNav from "../../Hooks/useNav";
 
 const Blog = () => {
+	useNav("Blog")
 	return (
 		<div className="min-h-screen bg-gradient-to-t from-orange-200 flex justify-center items-center">
 			<div className=" w-full max-lg:w-full md:w-3/4 px-20 py-48 font-bold grid grid-cols-1 md:grid-cols-2 gap-5">

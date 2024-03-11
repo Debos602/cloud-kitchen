@@ -5,13 +5,21 @@ import { Link } from "react-router-dom";
 
 const ServiceItem = ({ service }) => {
 	const { _id, img, name, price, description, ratings } = service;
-	// console.log(name);
+	// Check if description exists before accessing its properties
+	const truncatedDescription = description
+		? description.split(" ").slice(0, 20).join(" ")
+		: "";
+
 	return (
 		<div className="card glass mb-0 shadow-lg hover:shadow-orange-200/100 duration-500">
 			<PhotoProvider>
 				<PhotoView src={img}>
 					<figure>
-						<img src={img} className="object-cover w-2/4 pt-4" alt="car!" />
+						<img
+							src={img}
+							className="w-[250px] h-[250px] p-5 rounded-full"
+							alt="loading"
+						/>
 					</figure>
 				</PhotoView>
 			</PhotoProvider>
@@ -23,9 +31,12 @@ const ServiceItem = ({ service }) => {
 					<span className="  font-normal">Price: {price}</span>
 					<span className=" font-normal">Ratings: {ratings}</span>
 				</div>
-				<p className="text-base font-medium text-left bg-glass p-2 border-2 rounded-xl">
-					{description.split(" ").slice(0, 20).join(" ")}
-				</p>
+				{/* Display truncatedDescription only if description exists */}
+				{description && (
+					<p className="text-base font-medium text-left bg-glass p-2 border-2 rounded-xl">
+						{truncatedDescription}
+					</p>
+				)}
 
 				<div className="card-actions justify-center">
 					<Link to={`/services/${_id}`}>

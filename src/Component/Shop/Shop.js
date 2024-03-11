@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
+import useNav from "../../Hooks/useNav";
 
 const Shop = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+	useNav("Shop");
+	return <div className="min-h-screen"></div>;
 };
 
 export default Shop;

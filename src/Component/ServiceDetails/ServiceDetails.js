@@ -5,10 +5,12 @@ import { Link, useLoaderData } from "react-router-dom";
 import Review from "../Review/Review";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import useNav from "../../Hooks/useNav";
 
 const ServiceDetails = () => {
 	const { user } = useContext(AuthContext);
 	const { _id, description, img, name, price, ratings } = useLoaderData();
+	useNav("Service");
 
 	// console.log(description);
 	const backgroundImageStyle = {

@@ -74,6 +74,11 @@ const Header = () => {
 								My Review
 							</Link>
 						</li>
+						<li className="max-lg:py-2 max-lg:border-b-2 max-lg:border-text-black hover:text-orange-300">
+							<Link className="px-4" to="/shop">
+								shop
+							</Link>
+						</li>
 
 						<li className="max-lg:py-2 max-lg:border-b-2 max-lg:border-text-black hover:text-orange-300">
 							<Link className="px-4" to="/Contact">

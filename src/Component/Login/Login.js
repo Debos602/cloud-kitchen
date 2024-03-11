@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaFacebook, FaGooglePlus, FaLongArrowAltRight } from "react-icons/fa";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaTwitter } from "react-icons/fa";
-import { LockOpenIcon } from "@heroicons/react/24/solid";
+import useNav from "../../Hooks/useNav";
 
 const Login = () => {
 	const { user, facebookLogin, emailLogin, googleLogin, forgetPassword } =
@@ -11,6 +11,7 @@ const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
+	useNav("Login");
 	const navigate = useNavigate();
 	const location = useLocation();
 	let from = location.state?.from?.pathname || "/";

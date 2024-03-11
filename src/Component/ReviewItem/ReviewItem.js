@@ -73,7 +73,7 @@ const ReviewItem = ({ reviews, setReviews, review, index, handleDelete }) => {
 							Ratings: {ratings}
 						</p>
 					</div>
-					<p className="text-xl py-2 font-semibold opacity-70 border-2 border-orange-300 rounded-lg p-4">
+					<p className="text-xl py-2  min-h-36 w-full font-semibold opacity-70 border-2 border-orange-300 rounded-lg p-4">
 						"{message}"
 					</p>
 					<div className="flex justify-between w-full pt-4 font-bold text-2xl">
