@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaFacebook, FaGooglePlus, FaLongArrowAltRight } from "react-icons/fa";
+import { FaGooglePlus, FaLongArrowAltRight } from "react-icons/fa";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaTwitter } from "react-icons/fa";
 import useNav from "../../Hooks/useNav";
 
 const Login = () => {
-	const { user, facebookLogin, emailLogin, googleLogin, forgetPassword } =
+	const { user, emailLogin, googleLogin, forgetPassword } =
 		useContext(AuthContext);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -21,20 +21,6 @@ const Login = () => {
 			navigate("/");
 		}
 	}, [user?.uid, navigate]);
-
-	const handleFacebookLogin = async (event) => {
-		event.preventDefault();
-		setIsLoading(true);
-		setTimeout(async () => {
-			try {
-				await facebookLogin();
-			} catch (error) {
-				console.error("Error logging in with Facebook:", error.message);
-			} finally {
-				setIsLoading(false);
-			}
-		}, 1000); // <- Set the delay time here
-	};
 
 	const handleGoogleProvider = async (event) => {
 		event.preventDefault();
@@ -106,7 +92,7 @@ const Login = () => {
 		<div className="bg-gradient-to-b from-orange-200">
 			<div className="container mx-auto max-lg:px-50  pt-56 pb-16  w-full">
 				<div className="max-lg:w-4/6 md:w-3/6 xl:w-2/6 mx-auto rounded-lg bg-orange-100 shadow-lg shadow-orange-500/50 py-10 px-16">
-					<h2 className="text-4xl font-extrabold text-center opacity-95 mb-6">
+					<h2 className="text-4xl uppercase font-extrabold text-center opacity-95 mb-6">
 						Log In Now!
 					</h2>
 					<form onSubmit={handleLoginFormSubmit} className="text-center">
@@ -163,10 +149,7 @@ const Login = () => {
 					<div className="text-xl font-semibold text-center py-5">
 						<p>Log In with</p>
 
-						<span className="my-4 flex justify-around text-3xl w-3/4 mx-auto">
-							<button onClick={handleFacebookLogin}>
-								<FaFacebook />
-							</button>
+						<span className="my-4 flex justify-evenly text-3xl w-3/4 mx-auto">
 							<button onClick={handleGoogleProvider}>
 								<FaGooglePlus />
 							</button>

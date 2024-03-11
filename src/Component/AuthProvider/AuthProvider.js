@@ -46,11 +46,6 @@ const AuthProvider = ({ children }) => {
 
 	// Social site Authentication
 
-	const facebookLogin = () => {
-		setLoading(true);
-		return signInWithPopup(auth, facebookProvider);
-	};
-
 	const googleLogin = () => {
 		setLoading(true);
 		return signInWithPopup(auth, googleProvider);
@@ -78,7 +73,6 @@ const AuthProvider = ({ children }) => {
 		createUser,
 		emailLogin,
 		logOut,
-		facebookLogin,
 		googleLogin,
 		forgetPassword,
 		updateUserName,
