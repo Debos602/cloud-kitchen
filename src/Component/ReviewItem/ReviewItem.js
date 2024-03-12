@@ -20,7 +20,7 @@ const ReviewItem = ({ reviews, setReviews, review, index, handleDelete }) => {
 	};
 
 	const handleEditSubmit = (id) => {
-		fetch(`http://localhost:5000/myreview/${id}`, {
+		fetch(`https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/myreview/${id}`, {
 			method: "PUT",
 			headers: {
 				"content-type": "application/json",

@@ -27,7 +27,7 @@ const Review = ({ _id, name, img, price, ratings }) => {
 		};
 		console.log(review);
 
-		fetch("http://localhost:5000/review", {
+		fetch("https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/review", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

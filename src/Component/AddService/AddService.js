@@ -33,7 +33,7 @@ const AddService = () => {
 					price,
 					description,
 				};
-				fetch("http://localhost:5000/addservice", {
+				fetch("https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/addservice", {
 					method: "POST",
 					headers: { "content-type": "application/json" },
 					body: JSON.stringify(userData),

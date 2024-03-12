@@ -12,7 +12,7 @@ const Services = () => {
 	const pages = Math.ceil(count / size);
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/services?page=${page}&size=${size}`)
+		fetch(`https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/services?page=${page}&size=${size}`)
 			.then((res) => res.json())
 			.then((data) => {
 				setServices(data.services);

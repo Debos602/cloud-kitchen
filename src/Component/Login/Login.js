@@ -52,7 +52,7 @@ const Login = () => {
 			};
 
 			// jwt-token
-			fetch("http://localhost:5000/jwt", {
+			fetch("https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/jwt", {
 				method: "POST",
 				headers: {
 					"content-type": "application/json",

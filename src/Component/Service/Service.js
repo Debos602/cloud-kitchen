@@ -7,7 +7,7 @@ const Service = () => {
 	const [services, setServices] = useState([]);
 	const [visibleCard, setVisibleCard] = useState(3);
 	useEffect(() => {
-		fetch("http://localhost:5000/services")
+		fetch("https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/services")
 			.then((res) => res.json())
 			.then((data) => setServices(data.services));
 	}, []);
