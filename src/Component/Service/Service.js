@@ -31,7 +31,7 @@ const Service = () => {
 				<h2 className="text-center text-5xl uppercase font-bold mb-5">
 					Our <span className="text-orange-300">Service</span> Area
 				</h2>
-				<p className="text-2xl w-1/2 mx-auto mb-10">
+				<p className="text-lg font-semibold w-1/2 mx-auto mb-10">
 					Discover delightful dishes crafted with care, from savory Chicken Role
 					to comforting Italian Pasta, satisfying every craving
 				</p>
