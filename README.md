@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+Conditional CSS:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Implement conditional CSS to dynamically style elements based on certain conditions such as availability of items, order status, or user preferences. For example, you can change the appearance of menu items that are sold out, highlight special offers, or adjust the layout based on screen size or device type.
+CRUD Operations with MongoDB:
 
-## Available Scripts
+Integrate MongoDB as the database backend to handle CRUD (Create, Read, Update, Delete) operations for managing menu items, orders, customer information, and other data relevant to the Cloud Kitchen. Use MongoDB's flexible document-based data model to store and retrieve data efficiently, ensuring scalability and performance.
+Display Data from API:
 
-In the project directory, you can run:
+Utilize APIs to fetch data such as real-time inventory levels, pricing information, or delivery status from external sources or internal systems. Display this data on the website to provide customers with up-to-date information and improve user experience. For example, show estimated delivery times based on live tracking data or display trending menu items based on popularity.
+Edit in Modal and Save:
 
-### `npm start`
+Implement a modal popup interface for editing and updating information such as user profiles, order details, or delivery preferences. When users click on an edit button, display a modal window with form fields pre-populated with existing data. Allow users to make changes, validate input, and save updates without navigating away from the current page, providing a seamless editing experience.
+Firebase Authentication:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Integrate Firebase Authentication to securely authenticate users and manage user sessions across the Cloud Kitchen website. Allow users to sign up, sign in, and sign out using email/password, social media accounts, or phone number authentication. Implement user roles and permissions to control access to specific features or content, ensuring data privacy and security. Additionally, personalize user experiences based on authentication status, such as showing personalized recommendations or order history for authenticated users.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
