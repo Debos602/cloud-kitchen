@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const SignUp = () => {
@@ -8,6 +8,7 @@ const SignUp = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isSigningUp, setIsSigningUp] = useState(false); // State for showing spinner
+	const navigate = useNavigate();
 
 	const handleEmailRegister = async (event) => {
 		event.preventDefault();
@@ -23,7 +24,9 @@ const SignUp = () => {
 			setName(""); // Clear the name input
 			event.target.reset();
 			handleLogout();
+			navigate("/login");
 		} catch (error) {
+			alert("Registered Successfully");
 			console.error("Error registering:", error.message);
 		} finally {
 			setIsSigningUp(false); // Stop showing spinner

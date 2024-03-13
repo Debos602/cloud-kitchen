@@ -9,14 +9,19 @@ const MyReviews = () => {
 	useNav("My-Review");
 
 	useEffect(() => {
-		fetch(`https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/reviews?email=${user?.email}`, {
-			headers: {
-				authorization: `Bearer ${localStorage.getItem("cloud-kitchen")}`,
-			},
-		})
+		fetch(
+			`https://cloud-kitchen-server-sand.vercel.app/reviews?email=${user?.email}`,
+			{
+				headers: {
+					authorization: `Bearer ${localStorage.getItem("cloud-kitchen")}`,
+				},
+			}
+		)
 			.then((res) => {
 				if (res.status === 401 || res.status === 403) {
-					logOut();
+					logOut()
+						.then(() => {})
+						.catch((error) => console.log(error));
 				}
 				return res.json();
 			})
@@ -31,7 +36,7 @@ const MyReviews = () => {
 			"Are you sure? you want to cancel this  review"
 		);
 		if (proceed) {
-			fetch(`https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/review/${id}`, {
+			fetch(`https://cloud-kitchen-server-sand.vercel.app/review/${id}`, {
 				method: "DELETE",
 			})
 				.then((res) => res.json())

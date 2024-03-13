@@ -11,14 +11,10 @@ import {
 	updateProfile,
 } from "firebase/auth";
 import app from "../../firebase/firebase.config";
-import { FacebookAuthProvider } from "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
 // console.log(auth);
-const facebookProvider = new FacebookAuthProvider();
-const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
@@ -46,11 +42,6 @@ const AuthProvider = ({ children }) => {
 
 	// Social site Authentication
 
-	const googleLogin = () => {
-		setLoading(true);
-		return signInWithPopup(auth, googleProvider);
-	};
-
 	const forgetPassword = (email) => {
 		setLoading(true);
 		return sendPasswordResetEmail(auth, email);
@@ -58,7 +49,7 @@ const AuthProvider = ({ children }) => {
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-			// console.log("current user", currentUser);
+			console.log("current user", currentUser);
 			setUser(currentUser);
 			setLoading(false);
 		});
@@ -73,7 +64,6 @@ const AuthProvider = ({ children }) => {
 		createUser,
 		emailLogin,
 		logOut,
-		googleLogin,
 		forgetPassword,
 		updateUserName,
 	};

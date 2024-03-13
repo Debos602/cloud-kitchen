@@ -40,11 +40,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/myreview",
-				element: (
-					<PrivateRoute>
-						<MyReviews></MyReviews>
-					</PrivateRoute>
-				),
+				element: <MyReviews></MyReviews>,
 			},
 			{
 				path: "/signup",
@@ -66,7 +62,9 @@ const router = createBrowserRouter([
 			{
 				path: "/services/:id",
 				loader: ({ params }) =>
-					fetch(`https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/services/${params.id}`),
+					fetch(
+						`https://cloud-kitchen-server-sand.vercel.app/services/${params.id}`
+					),
 				element: <ServiceDetails></ServiceDetails>,
 			},
 			{

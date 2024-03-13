@@ -9,8 +9,8 @@ const ReviewItem = ({ reviews, setReviews, review, index, handleDelete }) => {
 	const { user } = useContext(AuthContext);
 	const [showModal, setShowModal] = useState(false);
 	const [editMessage, setEditMessage] = useState(review?.message);
-	// console.log(editMessage);
-	const { message, ratings, _id, foodName } = review;
+	console.log(review);
+	const { message, img, ratings, _id, foodName } = review;
 
 	const reverseOrder = index % 2 !== 0; // Check if index is odd
 
@@ -20,7 +20,7 @@ const ReviewItem = ({ reviews, setReviews, review, index, handleDelete }) => {
 	};
 
 	const handleEditSubmit = (id) => {
-		fetch(`https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/myreview/${id}`, {
+		fetch(`https://cloud-kitchen-server-sand.vercel.app/myreview/${id}`, {
 			method: "PUT",
 			headers: {
 				"content-type": "application/json",
@@ -54,7 +54,7 @@ const ReviewItem = ({ reviews, setReviews, review, index, handleDelete }) => {
 							: "order-1 max-lg:order-none"
 					}`}
 				>
-					<img src={user?.photoURL} className="h-32 w-32 rounded-full" alt="" />
+					<img src={img} className="h-32 w-32 rounded-full" alt="" />
 					<div className="text-2xl font-bold text-orange-400">
 						{user.displayName}
 					</div>

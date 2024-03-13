@@ -6,8 +6,7 @@ import { FaTwitter } from "react-icons/fa";
 import useNav from "../../Hooks/useNav";
 
 const Login = () => {
-	const { user, emailLogin, googleLogin, forgetPassword } =
-		useContext(AuthContext);
+	const { user, emailLogin, forgetPassword } = useContext(AuthContext);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
@@ -22,21 +21,6 @@ const Login = () => {
 		}
 	}, [user?.uid, navigate]);
 
-	const handleGoogleProvider = async (event) => {
-		event.preventDefault();
-		setIsLoading(true);
-		setTimeout(async () => {
-			try {
-				await googleLogin();
-				navigate(from, { replace: true });
-			} catch (error) {
-				console.error("Error logging in with Google:", error.message);
-			} finally {
-				setIsLoading(false);
-			}
-		}, 1000); // <- Set the delay time here
-	};
-
 	const handleLoginFormSubmit = async (event) => {
 		event.preventDefault();
 		setIsLoading(true);
@@ -46,13 +30,12 @@ const Login = () => {
 			alert("Log In successful");
 			setEmail("");
 			setPassword("");
-
 			const currentUser = {
 				email,
 			};
 
 			// jwt-token
-			fetch("https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/jwt", {
+			fetch("https://cloud-kitchen-server-sand.vercel.app/jwt", {
 				method: "POST",
 				headers: {
 					"content-type": "application/json",
@@ -65,7 +48,7 @@ const Login = () => {
 					navigate(from, { replace: true });
 				});
 		} catch (error) {
-			console.error("Error logging in:", error.message);
+			alert("User not found. please Register");
 		} finally {
 			setIsLoading(false);
 		}
@@ -150,7 +133,7 @@ const Login = () => {
 						<p>Log In with</p>
 
 						<span className="my-4 flex justify-evenly text-3xl w-3/4 mx-auto">
-							<button onClick={handleGoogleProvider}>
+							<button>
 								<FaGooglePlus />
 							</button>
 							<Link to="/">

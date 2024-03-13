@@ -69,11 +69,13 @@ const Header = () => {
 							""
 						)}
 
-						<li className="max-lg:py-2 max-lg:border-b-2 max-lg:border-text-black hover:text-orange-300">
-							<Link className="px-4" to="/myreview">
-								My Review
-							</Link>
-						</li>
+						{user?.uid && (
+							<li className="max-lg:py-2 max-lg:border-b-2 max-lg:border-text-black hover:text-orange-300">
+								<Link className="px-4" to="/myreview">
+									My Review
+								</Link>
+							</li>
+						)}
 						<li className="max-lg:py-2 max-lg:border-b-2 max-lg:border-text-black hover:text-orange-300">
 							<Link className="px-4" to="/shop">
 								shop

@@ -10,7 +10,7 @@ const Price = () => {
 	const [foodList, setFoodList] = useState([]);
 	const [photo, setPhoto] = useState("https://i.ibb.co/9cm29JM/food1.png"); // Set default image
 	useEffect(() => {
-		fetch("https://cloud-kitchen-server-o4duyl0zo-debos602.vercel.app/foodlist")
+		fetch("https://cloud-kitchen-server-sand.vercel.app/foodlist")
 			.then((res) => res.json())
 			.then((data) => setFoodList(data));
 	}, []);
